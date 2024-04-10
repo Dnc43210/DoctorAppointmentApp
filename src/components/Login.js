@@ -18,7 +18,7 @@ export default function Login() {
       if (data.role === "patient") {
         delete data.role;
       }
-      console.log(JSON.stringify(data));
+      // console.log(JSON.stringify(data));
       handleLogin(data);
     }
     else
@@ -49,7 +49,7 @@ export default function Login() {
       .then((response) => response.text())
       .then((result) => {
         const res = JSON.parse(result);
-        console.log(res)
+        // console.log(res)
         if(res.status)
         {
             toast.success("Logged in")
