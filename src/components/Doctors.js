@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Layout from "./Layout";
 import { PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import toast from "react-hot-toast";
+import { Link } from 'react-router-dom';
 
 function Doctors() {
   const [docList, setDocList] = useState([]);
@@ -76,7 +77,7 @@ function Doctors() {
 
   return (
     <Layout>
-      <div className="p-11 my-16">
+      <div className="p-11">
         <h1 className="text-4xl font-semibold pb-6">Doctors</h1>
         <div className="overflow-x-auto rounded-lg">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500">
@@ -97,10 +98,9 @@ function Doctors() {
               {docList.map((doc, i) => (
                 <tr key={i} className="border-t">
                   <td
-                    scope="row"
                     className="px-6 py-4 font-medium text-gray-900 bg-blue-50"
                   >
-                    {doc.first_name + " " + doc.last_name}
+                    <Link to={doc.id+"/schedules"} className="hover:text-blue-600 hover:underline">{doc.first_name + " " + doc.last_name}</Link>
                   </td>
                   <td className="px-6 py-4 bg-blue-50">{doc.email}</td>
                   <td className="px-6 py-4 bg-blue-50">{doc.contact_number}</td>

@@ -5,7 +5,7 @@ export default function Footer() {
     <div>
       <footer className="fixed bottom-0 left-0 z-20 w-full p-4 bg-blue-100 border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 ">
         <span className="text-sm text-gray-500 sm:text-center">
-          © 2023{" "}
+          © 2024{" "}
           <a href="/" className="hover:underline">
             DoctorAppointment™
           </a>

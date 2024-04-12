@@ -21,27 +21,27 @@ export default function Dashboard() {
     {
       image:
         "https://t3.ftcdn.net/jpg/02/60/79/68/360_F_260796882_QyjDubhDDk0RZXV9z7XBEw9AKnWCizXy.jpg",
-      title: "Schedules",
+      title: "Appointment",
       description: "Get a list of all the appointments",
-      href: "appointments",
+      href: "schedules",
     },
   ];
   return (
     localStorage.getItem("token") && (
       <Layout>
-        <div className="pt-24 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+        <div className=" grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
           {ListData.map((item, i) => (
             <div
               className="max-w-sm bg-white border border-gray-200 rounded-lg shadow mx-auto my-6 lg:m-6"
               key={i}
             >
-              <a href="/">
+              <div>
                 <img
                   className="rounded-t-lg h-56 w-full object-cover"
                   src={item.image}
                   alt=""
                 />
-              </a>
+              </div>
               <div className="p-5">
                 <Link to={item.href}>
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 capitalize">

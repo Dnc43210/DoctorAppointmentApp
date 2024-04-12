@@ -81,7 +81,7 @@ export default function Qualifications() {
 
   return (
     <Layout>
-      <div className="p-11 my-16">
+      <div className="p-11">
         <h1 className="text-4xl font-semibold pb-6">Qualifications</h1>
         <div className="overflow-x-auto rounded-lg">
           <table className="w-full text-sm text-left rtl:text-right text-gray-500">
@@ -105,7 +105,6 @@ export default function Qualifications() {
               {qualList.map((qual, i) => (
                 <tr key={i} className="border-t">
                   <td
-                    scope="row"
                     className="px-6 py-4 font-medium text-gray-900 bg-blue-50"
                   >
                     {qual.degree}
