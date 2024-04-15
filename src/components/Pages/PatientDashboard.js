@@ -4,11 +4,11 @@ import toast from "react-hot-toast";
 
 export default function PatientDashboard() {
   const [doctors, setDoctors] = useState([]);
-  const [docId, setDocId] = useState("");
+  const [docId, setDocId] = useState("abcd");
   const [schedules, setSchedules] = useState([]);
-  const [schId, setSchId] = useState("");
+  const [schId, setSchId] = useState("abcd");
   const [availabilities, setAvailabilities] = useState([]);
-  const [availabilityId, setAvailabilityId] = useState("");
+  const [availabilityId, setAvailabilityId] = useState("aaa");
 
   const getSchedules = () => {
     const requestOptions = {
@@ -123,6 +123,7 @@ export default function PatientDashboard() {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 onChange={(event) => {
                   setDocId(event.target.value);
+                  getSchedules();
                 }}
               >
                 <option>Choose a Doctor</option>
