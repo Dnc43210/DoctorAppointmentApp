@@ -1,6 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Dashboard from "./components/Dashboard";
-import Login from "./components/Login";
 import Landing from "./components/Landing";
 import { Toaster } from "react-hot-toast";
 import Qualifications from "./components/Qualifications";
@@ -9,6 +8,7 @@ import Schedule from "./components/Schedule";
 import CreateSchedule from './components/CreateSchedule';
 import CreateAvailability from "./components/CreateAvailability";
 import Availabilities from "./components/Availabilities";
+import Login from './components/Pages/Login';
 
 function App() {
   return (

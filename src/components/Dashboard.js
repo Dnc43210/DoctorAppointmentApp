@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "./Layout";
 import { Link } from "react-router-dom";
+import PatientDashboard from "./Pages/PatientDashboard";
+import DoctorDashboard from "./Pages/DoctorDashboard";
 export default function Dashboard() {
   let ListData = [
     {
@@ -26,11 +28,15 @@ export default function Dashboard() {
       href: "schedules",
     },
   ];
+  useEffect(()=>{
+    if(localStorage.getItem("userType")=='undefined')
+    localStorage.setItem("userType","patient");
+  })
   return (
     localStorage.getItem("token") && (
       <Layout>
         <div className=" grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
-          {ListData.map((item, i) => (
+          {(localStorage.getItem("userType")==="admin") && ListData.map((item, i) => (
             <div
               className="max-w-sm bg-white border border-gray-200 rounded-lg shadow mx-auto my-6 lg:m-6"
               key={i}
@@ -76,6 +82,8 @@ export default function Dashboard() {
             </div>
           ))}
         </div>
+        {(localStorage.getItem("userType")==="patient") && (<PatientDashboard/>)}
+        {(localStorage.getItem("userType")==="doctor") && (<DoctorDashboard/>)}
       </Layout>
     )
   );

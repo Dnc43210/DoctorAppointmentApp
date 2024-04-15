@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "./Layout";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { PlusIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import toast from "react-hot-toast";
 
